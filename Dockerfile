@@ -13,7 +13,7 @@ RUN go build
 FROM scratch
 
 COPY --from=certs /etc/ssl/certs /etc/ssl/certs
-COPY --from=build coredns /coredns
+COPY --from=build /coredns /coredns
 
 EXPOSE 53 53/udp
 ENTRYPOINT ["/coredns"]
